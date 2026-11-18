@@ -85,7 +85,7 @@ h1 em{display:block;font-weight:500;font-style:italic;color:var(--wheat)}
   -webkit-mask:radial-gradient(17px at 17px 100%,transparent 98%,#000) 0 0/34px 100%;mask:radial-gradient(17px at 17px 100%,transparent 98%,#000) 0 0/34px 100%}
 .shop.b .awning{background:repeating-linear-gradient(90deg,var(--green) 0 34px,#fff 34px 68px);animation-delay:-2s}
 @keyframes flap{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.07) skewX(-1.5deg)}}
-.front{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;padding:16px 22px 0}
+.front{display:grid;grid-template-columns:2.3fr 1fr;gap:14px;padding:16px 22px 0;align-items:end}
 .window{position:relative;height:clamp(150px,17vw,200px);border-radius:6px;background:#1a100a url(polki.jpg) no-repeat 0 50%/cover;border:6px solid #6b4a32;overflow:hidden;box-shadow:inset 0 0 30px rgba(0,0,0,.45)}
 .shop.b .window{background-position:100% 50%}
 .window::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.18) 38%,rgba(255,255,255,0) 46%);animation:glint 6s ease-in-out infinite}
@@ -94,10 +94,23 @@ h1 em{display:block;font-weight:500;font-style:italic;color:var(--wheat)}
 .shelf.s1{top:62px}.shelf.s2{top:118px}
 .loaf{position:absolute;width:38px;height:22px;border-radius:50% 50% 40% 40%;background:radial-gradient(circle at 40% 30%,#e7a654,#a8611f 70%)}
 .loaf.l{width:58px;height:20px;border-radius:40px}
-.door{height:clamp(150px,17vw,200px);border-radius:6px 6px 0 0;background:var(--green);border:6px solid #6b4a32;position:relative}
-.shop.b .door{background:var(--terra2)}
-.door::before{content:"";position:absolute;left:12%;right:12%;top:10%;height:40%;border-radius:4px;background:rgba(255,255,255,.25)}
-.door::after{content:"";position:absolute;right:12%;top:58%;width:8px;height:8px;border-radius:50%;background:var(--wheat)}
+/* drzwi: malowane drewno z usłojeniem, przeszklenie z rozmytym wnętrzem piekarni, płycina, mosiężna klamka */
+.door{--paint:#1f4d3a;position:relative;height:clamp(230px,26vw,300px);border-radius:4px 4px 0 0;border:6px solid #5a3c27;
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.10),rgba(0,0,0,0) 35%,rgba(0,0,0,.22)),
+    repeating-linear-gradient(90deg,rgba(0,0,0,.07) 0 1px,rgba(0,0,0,0) 1px 4px,rgba(255,255,255,.035) 4px 5px,rgba(0,0,0,0) 5px 9px),
+    var(--paint);
+  box-shadow:inset 0 0 0 2px rgba(0,0,0,.25),inset 6px 0 10px rgba(0,0,0,.25),0 6px 10px rgba(0,0,0,.25)}
+.shop.b .door{--paint:#a8411f}
+.door .glass{position:absolute;left:14%;right:14%;top:8%;height:46%;border-radius:2px;overflow:hidden;
+  box-shadow:inset 0 0 0 3px rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.18),0 -1px 0 rgba(0,0,0,.35)}
+.door .glass::before{content:"";position:absolute;inset:-6px;background:url(polki.jpg) 40% 50%/cover;filter:blur(1.6px) brightness(1.05) saturate(1.1)}
+.door .glass::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 28%,rgba(255,255,255,0) 60%,rgba(255,255,255,.18) 66%,rgba(255,255,255,0) 74%),linear-gradient(rgba(255,214,150,.15),rgba(0,0,0,.2))}
+.door .panel{position:absolute;left:14%;right:14%;top:62%;bottom:12%;border-radius:2px;
+  box-shadow:inset 2px 2px 0 rgba(255,255,255,.14),inset -2px -2px 0 rgba(0,0,0,.35),inset 0 0 0 6px rgba(0,0,0,.08),0 0 0 2px rgba(0,0,0,.18)}
+.door .handle{position:absolute;right:7%;top:50%;width:7px;height:22%;border-radius:4px;
+  background:linear-gradient(90deg,#6e4f17,#f6d98a 45%,#c49a3a 60%,#7a5a1e);box-shadow:2px 3px 4px rgba(0,0,0,.45)}
+.door .plate{position:absolute;left:0;right:0;bottom:0;height:7%;background:linear-gradient(#f2cf7a,#b88a32 50%,#8a6420);box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
 .info{padding:20px 22px 0}
 .info h3{font-size:clamp(26px,2.6vw,34px)}
 .info .tag{display:inline-block;margin-top:10px;padding:5px 12px;border-radius:999px;background:var(--wheat);font-weight:800;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
@@ -182,7 +195,7 @@ footer p{max-width:88ch;font-size:13px}
           <div class="awning" aria-hidden="true"></div>
           <div class="front" aria-hidden="true">
             <div class="window"></div>
-            <div class="door"></div>
+            <div class="door"><span class="glass"></span><span class="panel"></span><span class="handle"></span><span class="plate"></span></div>
           </div>
           <div class="info">
             <span class="tag">pierwszy lokal</span>
@@ -200,7 +213,7 @@ footer p{max-width:88ch;font-size:13px}
           <div class="awning" aria-hidden="true"></div>
           <div class="front" aria-hidden="true">
             <div class="window"></div>
-            <div class="door"></div>
+            <div class="door"><span class="glass"></span><span class="panel"></span><span class="handle"></span><span class="plate"></span></div>
           </div>
           <div class="info">
             <span class="tag">nowy lokal</span>
