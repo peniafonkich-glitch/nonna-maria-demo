@@ -86,14 +86,15 @@ h1 em{display:block;font-weight:500;font-style:italic;color:var(--wheat)}
 .shop.b .awning{background:repeating-linear-gradient(90deg,var(--green) 0 34px,#fff 34px 68px);animation-delay:-2s}
 @keyframes flap{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.07) skewX(-1.5deg)}}
 .front{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;padding:16px 22px 0}
-.window{position:relative;height:150px;border-radius:6px;background:linear-gradient(160deg,#3a2a1e,#1a100a);border:6px solid #6b4a32;overflow:hidden}
+.window{position:relative;height:clamp(150px,17vw,200px);border-radius:6px;background:#1a100a url(polki.jpg) no-repeat 0 50%/cover;border:6px solid #6b4a32;overflow:hidden;box-shadow:inset 0 0 30px rgba(0,0,0,.45)}
+.shop.b .window{background-position:100% 50%}
 .window::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,0) 30%,rgba(255,255,255,.18) 38%,rgba(255,255,255,0) 46%);animation:glint 6s ease-in-out infinite}
 @keyframes glint{0%,60%{transform:translateX(-80%)}100%{transform:translateX(80%)}}
 .shelf{position:absolute;left:8px;right:8px;height:4px;background:#8a6444}
 .shelf.s1{top:62px}.shelf.s2{top:118px}
 .loaf{position:absolute;width:38px;height:22px;border-radius:50% 50% 40% 40%;background:radial-gradient(circle at 40% 30%,#e7a654,#a8611f 70%)}
 .loaf.l{width:58px;height:20px;border-radius:40px}
-.door{height:150px;border-radius:6px 6px 0 0;background:var(--green);border:6px solid #6b4a32;position:relative}
+.door{height:clamp(150px,17vw,200px);border-radius:6px 6px 0 0;background:var(--green);border:6px solid #6b4a32;position:relative}
 .shop.b .door{background:var(--terra2)}
 .door::before{content:"";position:absolute;left:12%;right:12%;top:10%;height:40%;border-radius:4px;background:rgba(255,255,255,.25)}
 .door::after{content:"";position:absolute;right:12%;top:58%;width:8px;height:8px;border-radius:50%;background:var(--wheat)}
@@ -180,9 +181,7 @@ footer p{max-width:88ch;font-size:13px}
           <div class="sign">Nonna Maria · Pilotów</div>
           <div class="awning" aria-hidden="true"></div>
           <div class="front" aria-hidden="true">
-            <div class="window"><div class="shelf s1"></div><div class="shelf s2"></div>
-              <i class="loaf" style="left:14px;top:40px"></i><i class="loaf l" style="left:60px;top:42px"></i><i class="loaf" style="left:128px;top:40px"></i>
-              <i class="loaf l" style="left:16px;top:98px"></i><i class="loaf" style="left:86px;top:96px"></i><i class="loaf" style="left:132px;top:96px"></i></div>
+            <div class="window"></div>
             <div class="door"></div>
           </div>
           <div class="info">
@@ -200,9 +199,7 @@ footer p{max-width:88ch;font-size:13px}
           <div class="sign">Nonna Maria · os. Słoneczne</div>
           <div class="awning" aria-hidden="true"></div>
           <div class="front" aria-hidden="true">
-            <div class="window"><div class="shelf s1"></div><div class="shelf s2"></div>
-              <i class="loaf l" style="left:12px;top:42px"></i><i class="loaf" style="left:80px;top:40px"></i><i class="loaf l" style="left:122px;top:42px"></i>
-              <i class="loaf" style="left:18px;top:96px"></i><i class="loaf l" style="left:64px;top:98px"></i><i class="loaf" style="left:134px;top:96px"></i></div>
+            <div class="window"></div>
             <div class="door"></div>
           </div>
           <div class="info">
@@ -264,7 +261,7 @@ footer p{max-width:88ch;font-size:13px}
 </main>
 
 <footer>
-  <p>To makieta nowej strony. Nie ma na niej zdjęć piekarni: bochenek na ekranie to model 3D wygenerowany komputerowo, a witryny to rysunki. W pełnej wersji pojawią się prawdziwe zdjęcia, menu z cenami i godziny lokalu na Pilotów, za zgodą właścicieli. Opisy, adresy, godziny i skład rogala pochodzą z facebookowych stron Piekarni Nonna Maria.</p>
+  <p>To makieta nowej strony. Nie ma na niej zdjęć piekarni: bochenek na ekranie to model 3D wygenerowany komputerowo, a pieczywo w witrynach to zdjęcie poglądowe. W pełnej wersji pojawią się prawdziwe zdjęcia, menu z cenami i godziny lokalu na Pilotów, za zgodą właścicieli. Opisy, adresy, godziny i skład rogala pochodzą z facebookowych stron Piekarni Nonna Maria.</p>
 </footer>
 
 <script>
